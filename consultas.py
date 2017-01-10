@@ -4,13 +4,14 @@
 ## INCLUIR LA CABECERA AQUI
 ## 
 
-from bottle import get, run, request
-
+from bottle import get, run, request, template
+import agregation
 @get('/top_countries')
 # http://localhost:8080/top_countries?n=3
 def agg1():
     n = request.query['n']
-    return "<b>" + n + "</b>"
+    aux = agregation.topCountries(int(n))       
+    return template("template_lista_countries.tpl",lista=aux)
 
 @get('/products')
 # http://localhost:8080/products?min=2.34
