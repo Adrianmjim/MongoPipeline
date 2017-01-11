@@ -18,4 +18,3 @@ def topCountries(num):
         a.append(e)
     print a
     return a
-topCountries(7)
