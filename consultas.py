@@ -17,28 +17,31 @@ def agg1():
 # http://localhost:8080/products?min=2.34
 def agg2():
     m = request.query['min']
-    return template("template_lista_productos.tpl")
+    aux = agregation.products(m)
+    return template("template_lista_productos.tpl", lista=aux)
 
     
 @get('/age_range')
 # http://localhost:8080/age_range?min=80
 def agg3():
     m = request.query['min']
-    
-    return template("template_lista_edades.tpl")
+    aux = agregation.age_range(m)
+    return template("template_lista_edades.tpl", lista=aux)
     
     
 @get('/avg_lines')
 # http://localhost:8080/avg_lines
 def agg4():
-    return template("template_lista_lineas.tpl")
+    aux = agregation.avglines()
+    return template("template_lista_lineas.tpl", lista=aux)
     
     
 @get('/total_country')
 # http://localhost:8080/total_country?c=Alemania
 def agg5():
     name = request.query['c']
-    return template("template_lista_total.tpl")
+    aux = agregation.total_countries(name)
+    return template("template_lista_total.tpl", lista=aux)
     
         
 if __name__ == "__main__":
