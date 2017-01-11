@@ -11,8 +11,9 @@
     </header>
     <ul>
     % for pais in lista:
-      <li> {{pais[0]}} {{pais[1]}} </li>
+      <li> {{pais['_id']}} {{pais['total']}} </li>
     % end
+    <li> Numero de entradas {{len(lista)}}</li>
     </ul>    
 </body>
 </html>
