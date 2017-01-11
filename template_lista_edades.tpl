@@ -7,11 +7,11 @@
  
 <body>
     <header>
-       <h1>Ventas de cada producto</h1>
+       <h1>Rango de edad en paises con un minimo de usuarios</h1>
     </header>
     <ul>
-    % for producto in lista:
-      <li> {{producto['_id']}} {{producto['precio']}} {{producto['vendidas']}} </li>
+    % for pais in lista:
+      <li> {{pais['_id']}} {{pais['rango']}} </li>
     % end
     <li> Numero de resultados: {{len(lista)}}</li>
     </ul>    
